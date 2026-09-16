@@ -1,0 +1,301 @@
+{
+  "format": "lghub-preset-v1",
+  "name": "DONT_TOUCH_SYSTEM",
+  "sourceDevice": "g502_spectrum",
+  "slotPrefix": "g502spectrum_",
+  "exportedAt": "2026-06-04T16:12:19.268634+00:00",
+  "profile": {
+    "applicationId": "420fd454-0c36-499d-bde4-146823b16147",
+    "assignments": [
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g9_m1_shifted"
+      },
+      {
+        "cardId": "9b85425b-8c71-4b15-808c-1206c3320000",
+        "slotId": "g502spectrum_lighting_setting_firmware"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g5_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-040c00000000",
+        "slotId": "g502spectrum_g10_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g4_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g7_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-040100000000",
+        "slotId": "g502spectrum_g8_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-020300000000",
+        "slotId": "g502spectrum_g3_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g6_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g1_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090100000000",
+        "slotId": "g502spectrum_g9_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g8_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g3_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g11_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-040200000000",
+        "slotId": "g502spectrum_g7_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-020100000000",
+        "slotId": "g502spectrum_g1_m1"
+      },
+      {
+        "cardId": "65043b55-a39c-45c2-be49-e64c7dd65a92",
+        "slotId": "g502spectrum_mouse_settings"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-040300000000",
+        "slotId": "g502spectrum_g6_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g10_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "slotId": "g502spectrum_g2_m1_shifted"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-040b00000000",
+        "slotId": "g502spectrum_g11_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-020200000000",
+        "slotId": "g502spectrum_g2_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-020400000000",
+        "slotId": "g502spectrum_g4_m1"
+      },
+      {
+        "cardId": "0f82f693-5b78-4cf5-867e-020500000000",
+        "slotId": "g502spectrum_g5_m1"
+      }
+    ],
+    "id": "420fd454-0c36-499d-bde4-146823b16147",
+    "name": "DONT_TOUCH_SYSTEM"
+  },
+  "cards": [
+    {
+      "attribute": "MOUSE_SETTINGS",
+      "id": "65043b55-a39c-45c2-be49-e64c7dd65a92",
+      "mouseSettings": {
+        "dpiTable": {
+          "activeDpi": 6400,
+          "defaultDpi": 2400,
+          "levels": [
+            1200,
+            2400,
+            3200,
+            6400
+          ],
+          "shiftDpi": 1200
+        },
+        "reportRate": {
+          "value": 1000
+        }
+      },
+      "name": "DEFAULT_CARD_NAME_MOUSE_SETTINGS",
+      "profileId": "420fd454-0c36-499d-bde4-146823b16147"
+    },
+    {
+      "attribute": "FIRMWARE_LIGHTING_SETTINGS",
+      "firmwareLightingSettings": {
+        "effects": [
+          {
+            "cycleParams": {
+              "intensity": 1,
+              "periodInMs": 8000
+            },
+            "id": "CYCLE",
+            "zoneType": "ZONE_BRANDING"
+          },
+          {
+            "cycleParams": {
+              "intensity": 1,
+              "periodInMs": 8000
+            },
+            "id": "CYCLE",
+            "zoneType": "ZONE_PRIMARY"
+          }
+        ]
+      },
+      "id": "9b85425b-8c71-4b15-808c-1206c3320000",
+      "name": "DEFAULT_CARD_NAME_FIRMWARE_LIGHTING_SETTINGS",
+      "readOnly": true
+    }
+  ],
+  "ommRaw": null,
+  "readable": {
+    "buttons": [
+      {
+        "slot": "g502spectrum_g9_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_lighting_setting_firmware",
+        "cardId": "9b85425b-8c71-4b15-808c-1206c3320000",
+        "action": "FIRMWARE_LIGHTING_SETTINGS"
+      },
+      {
+        "slot": "g502spectrum_g5_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g10_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-040c00000000",
+        "action": "Built-in preset 040c00000000"
+      },
+      {
+        "slot": "g502spectrum_g4_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g7_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g8_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-040100000000",
+        "action": "Built-in preset 040100000000"
+      },
+      {
+        "slot": "g502spectrum_g3_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-020300000000",
+        "action": "F3"
+      },
+      {
+        "slot": "g502spectrum_g6_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g1_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g9_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-090100000000",
+        "action": "Built-in preset 090100000000"
+      },
+      {
+        "slot": "g502spectrum_g8_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g3_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g11_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g7_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-040200000000",
+        "action": "Built-in preset 040200000000"
+      },
+      {
+        "slot": "g502spectrum_g1_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-020100000000",
+        "action": "F1"
+      },
+      {
+        "slot": "g502spectrum_mouse_settings",
+        "cardId": "65043b55-a39c-45c2-be49-e64c7dd65a92",
+        "action": "MOUSE_SETTINGS"
+      },
+      {
+        "slot": "g502spectrum_g6_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-040300000000",
+        "action": "Built-in preset 040300000000"
+      },
+      {
+        "slot": "g502spectrum_g10_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g2_m1_shifted",
+        "cardId": "0f82f693-5b78-4cf5-867e-090700000000",
+        "action": "Disabled / G-Shift default"
+      },
+      {
+        "slot": "g502spectrum_g11_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-040b00000000",
+        "action": "Built-in preset 040b00000000"
+      },
+      {
+        "slot": "g502spectrum_g2_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-020200000000",
+        "action": "F2"
+      },
+      {
+        "slot": "g502spectrum_g4_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-020400000000",
+        "action": "F4"
+      },
+      {
+        "slot": "g502spectrum_g5_m1",
+        "cardId": "0f82f693-5b78-4cf5-867e-020500000000",
+        "action": "F5"
+      }
+    ],
+    "dpi": {
+      "dpiTable": {
+        "activeDpi": 6400,
+        "defaultDpi": 2400,
+        "levels": [
+          1200,
+          2400,
+          3200,
+          6400
+        ],
+        "shiftDpi": 1200
+      },
+      "reportRate": {
+        "value": 1000
+      }
+    }
+  }
+}

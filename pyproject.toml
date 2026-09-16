@@ -12,11 +12,11 @@ requires-python = ">=3.10"
 dependencies = ["hidapi>=0.14.0"]
 
 [project.optional-dependencies]
-macos = ["pyobjc-framework-Cocoa>=10.0"]
+macos = ["pyobjc-framework-Cocoa>=10.0", "watchdog>=4.0.0"]
 build = ["py2app>=0.28; sys_platform == 'darwin'", "pyinstaller>=6.0; sys_platform == 'win32'", "pillow>=10.0"]
 
 [project.scripts]
 swap = "swap.app:main"
 
 [tool.setuptools.packages.find]
-include = ["swap*"]
+include = ["swap*", "gui*", "gcore*", "ghub_presets*"]

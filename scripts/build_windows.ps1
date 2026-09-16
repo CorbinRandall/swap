@@ -18,6 +18,9 @@ if (-not $Python) {
   --hidden-import hid `
   --hidden-import swap.app_win `
   --exclude-module swap.app_mac `
+  --exclude-module gui `
+  --exclude-module gcore `
+  --exclude-module ghub_presets `
   "$Root\swap\app.py"
 
 Write-Host "Built: $Root\dist\Swap\Swap.exe"

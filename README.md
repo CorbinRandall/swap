@@ -1,11 +1,14 @@
 # Swap
 
-Swap is a tiny native Windows and macOS app that switches between profiles
-already stored in a Logitech mouse's onboard memory.
+Swap is a native Windows and macOS app for Logitech onboard mouse profiles.
 
-Open Swap, choose a profile, and the mouse switches immediately. There is no
-preset editor, library manager, tray menu, cloud service, or G HUB database
-integration.
+Open Swap and choose an active profile. Windows keeps its existing compact
+profile selector. macOS uses the proven G Dock app, with Swap's name and icon:
+an active-profile selector plus Preset Management for bulk import/export and
+choosing a preset folder. Neither app edits presets or requires G HUB at runtime.
+
+The Mac port preserves G's backend, settings paths, and permission identity.
+See [macOS compatibility and installation](docs/MACOS.md).
 
 > Independent project. Not affiliated with or endorsed by Logitech.
 
@@ -17,12 +20,13 @@ integration.
 - G502 Lightspeed receiver (`046D:C539`) when its firmware supports a real
   onboard profile-index switch
 
-Swap never emulates receiver switching by overwriting another onboard slot. If
+The Windows backend never emulates receiver switching by overwriting another onboard slot. If
 a receiver rejects a true slot switch, connect the mouse over USB.
+The preserved Mac backend retains G's existing Lightspeed overlay behavior.
 
 ## Why discovery is reliable
 
-G502 firmware can emit unsolicited HID++ reports on the same endpoint used for
+On Windows, G502 firmware can emit unsolicited HID++ reports on the same endpoint used for
 commands. Swap ignores unrelated reports and waits for the response matching
 the current command. At launch it also performs bounded automatic acquisition
 retries, so USB initialization races require no Retry button or user action.
@@ -43,8 +47,9 @@ python3 -m pip install -e ".[macos]"
 ./scripts/run_macos.sh
 ```
 
-macOS requires one-time Input Monitoring permission for Swap or the Python
-interpreter used during source development.
+macOS requires Input Monitoring permission. Existing G installs retain the
+same bundle identifier and signing identity; settings may still call it G.
+Source development uses the Python interpreter's permissions.
 
 ## Build
 
@@ -62,10 +67,13 @@ Output: `dist/Swap/Swap.exe`.
 ```bash
 python3 -m pip install -e ".[macos,build]"
 ./scripts/build_macos.sh
+./scripts/install_macos.sh
 ```
 
-Output: `dist/Swap.app`. Distribution outside your own Mac requires normal
-Apple Developer ID signing and notarization.
+Output: `dist/Swap.app`, installed as `/Applications/Swap.app`. The build reuses
+the existing `G Onboard Local` certificate, or `SWAP_SIGN_IDENTITY` if supplied.
+It stops if that identity is missing rather than silently changing signatures.
+Distribution outside your own Mac requires Apple Developer ID signing and notarization.
 
 ## Test
 
