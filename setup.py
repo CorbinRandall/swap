@@ -11,15 +11,16 @@ OPTIONS = {
     "plist": {
         "CFBundleName": "Swap",
         "CFBundleDisplayName": "Swap",
-        "CFBundleIdentifier": "io.bytecode.swap-onboard",
+        # Branding changes must not change the existing G permission identity.
+        "CFBundleIdentifier": "io.bytecode.g-onboard",
         "CFBundleVersion": "0.1.0",
         "CFBundleShortVersionString": "0.1.0",
         "LSUIElement": False,
         "NSHighResolutionCapable": True,
         "NSInputMonitoringUsageDescription": "Swap reads and switches onboard mouse profiles.",
     },
-    "packages": ["swap", "swap.hidpp"],
-    "includes": ["hid", "swap.app_mac", "swap.choices"],
+    "packages": ["gui", "gcore", "ghub_presets", "watchdog"],
+    "includes": ["hid", "gui.app_mac"],
 }
 
-setup(name="Swap", app=["swap/app.py"], options={"py2app": OPTIONS}, setup_requires=["py2app"])
+setup(name="Swap", app=["gui/app.py"], options={"py2app": OPTIONS}, setup_requires=["py2app"])

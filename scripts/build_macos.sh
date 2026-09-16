@@ -15,7 +15,13 @@ if [[ ! -f assets/Swap.icns ]]; then
   rm -rf "$TMP"
 fi
 
-rm -rf build dist
-python3 setup.py py2app
-codesign --force --deep --sign - dist/Swap.app
+# Stage old outputs outside the checkout instead of deleting release artifacts.
+for folder in build dist; do
+  if [[ -e "$folder" ]]; then
+    backup="$(mktemp -d "${TMPDIR:-/tmp}/swap-build.XXXXXX")"
+    mv "$folder" "$backup/"
+  fi
+done
+"${SWAP_PYTHON:-python3}" setup.py py2app
+"$ROOT/scripts/sign_macos.sh" "$ROOT/dist/Swap.app"
 echo "Built: $ROOT/dist/Swap.app"

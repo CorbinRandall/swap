@@ -7,3 +7,11 @@ dist/
 __pycache__/
 *.pyc
 .DS_Store
+.eggs/
+.env
+presets.dir
+Put Presets Here/
+Toolkit Data/
+*.p12
+*.pem
+active-state.json

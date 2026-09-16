@@ -1,0 +1,1 @@
+"""G menu bar UI."""
