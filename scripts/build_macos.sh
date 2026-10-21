@@ -22,6 +22,13 @@ for folder in build dist; do
     mv "$folder" "$backup/"
   fi
 done
+# py2app rejects pyproject [project].dependencies ("install_requires is no
+# longer supported"), so hide pyproject.toml while it runs and always restore it.
+PYPROJECT_STASH="$(mktemp -d)"
+mv pyproject.toml "$PYPROJECT_STASH/"
+trap 'mv "$PYPROJECT_STASH/pyproject.toml" "$ROOT/pyproject.toml"' EXIT
 "${SWAP_PYTHON:-python3}" setup.py py2app
+mv "$PYPROJECT_STASH/pyproject.toml" "$ROOT/pyproject.toml"
+trap - EXIT
 "$ROOT/scripts/sign_macos.sh" "$ROOT/dist/Swap.app"
 echo "Built: $ROOT/dist/Swap.app"
