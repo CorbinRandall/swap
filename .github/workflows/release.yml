@@ -1,0 +1,72 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to build and publish (e.g. v0.1.0)
+        required: true
+permissions:
+  contents: write
+env:
+  TAG: ${{ github.event.inputs.tag || github.ref_name }}
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install build dependencies
+        run: python -m pip install -e ".[build]"
+      - name: Build Swap.exe
+        env:
+          SWAP_PYTHON: python
+          SWAP_ONEFILE: '1'
+        run: powershell -ExecutionPolicy Bypass -File scripts\build_windows.ps1
+      - name: Rename
+        shell: bash
+        run: mv dist/Swap.exe "dist/Swap-${TAG}-Windows.exe"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: dist/Swap-*-Windows.exe
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install build dependencies
+        run: python -m pip install -e ".[macos,build]"
+      - name: Build Swap.app (ad-hoc signed)
+        env:
+          SWAP_PYTHON: python
+          SWAP_SIGN_IDENTITY: '-'
+        run: ./scripts/build_macos.sh
+      - name: Build DMG
+        run: ./scripts/make_dmg_macos.sh "dist/Swap-${TAG}-macOS.dmg"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos
+          path: dist/Swap-*-macOS.dmg
+  publish:
+    needs: [windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: Swap ${{ env.TAG }}
+          files: out/*
+          body: |
+            **Windows:** download `Swap-${{ env.TAG }}-Windows.exe` and run it.
+            **macOS (Apple silicon):** open `Swap-${{ env.TAG }}-macOS.dmg` and drag Swap to Applications.
+            The Mac build is not notarized: the first time, right-click Swap → Open, then allow Input Monitoring when asked.
