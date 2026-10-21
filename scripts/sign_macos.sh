@@ -4,7 +4,8 @@ set -euo pipefail
 APP="${1:?Usage: sign_macos.sh /path/to/Swap.app}"
 IDENTITY="${SWAP_SIGN_IDENTITY:-G Onboard Local}"
 BUNDLE_ID="io.bytecode.g-onboard"
-if ! security find-identity -v -p codesigning | grep -F "\"$IDENTITY\"" >/dev/null; then
+# "-" means ad-hoc signing (CI release builds without G's certificate).
+if [[ "$IDENTITY" != "-" ]] && ! security find-identity -v -p codesigning | grep -F "\"$IDENTITY\"" >/dev/null; then
   echo "Signing identity '$IDENTITY' is unavailable. Set SWAP_SIGN_IDENTITY to your signing identity." >&2
   exit 1
 fi

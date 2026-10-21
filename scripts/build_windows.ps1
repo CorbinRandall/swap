@@ -7,11 +7,14 @@ if (-not $Python) {
   if (-not (Test-Path $Python)) { $Python = "python" }
 }
 
+# SWAP_ONEFILE=1 builds a single portable Swap.exe for GitHub releases.
+$Mode = if ($env:SWAP_ONEFILE -eq "1") { "--onefile" } else { "--onedir" }
+
 & $Python -m PyInstaller `
   --noconfirm `
   --clean `
   --windowed `
-  --onedir `
+  $Mode `
   --name Swap `
   --icon "$Root\assets\Swap.ico" `
   --collect-submodules swap.hidpp `
@@ -23,4 +26,5 @@ if (-not $Python) {
   --exclude-module ghub_presets `
   "$Root\swap\app.py"
 
-Write-Host "Built: $Root\dist\Swap\Swap.exe"
+if ($Mode -eq "--onefile") { Write-Host "Built: $Root\dist\Swap.exe" }
+else { Write-Host "Built: $Root\dist\Swap\Swap.exe" }

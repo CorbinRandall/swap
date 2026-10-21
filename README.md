@@ -12,6 +12,18 @@ See [macOS compatibility and installation](docs/MACOS.md).
 
 > Independent project. Not affiliated with or endorsed by Logitech.
 
+## Install
+
+Download the latest build from [Releases](https://github.com/CorbinRandall/swap/releases/latest):
+
+- **Windows:** `Swap-<version>-Windows.exe`. Run it; no installer needed.
+- **macOS (Apple silicon):** `Swap-<version>-macOS.dmg`. Open it and drag Swap
+  to Applications. Release builds are ad-hoc signed, so the first launch needs
+  right-click → Open, and macOS asks for Input Monitoring once.
+
+To publish a new release, push a tag such as `v0.2.0`; GitHub Actions builds
+both files and attaches them to the release.
+
 ## Supported hardware
 
 - G502 Proteus Spectrum (`046D:C332`)
